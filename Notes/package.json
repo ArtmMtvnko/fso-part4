@@ -1,0 +1,33 @@
+{
+  "name": "part_a",
+  "version": "1.0.0",
+  "description": "node js training",
+  "main": "index.js",
+  "scripts": {
+    "build:ui": "@powershell Remove-Item -Recurse -Force dist && cd ../../fso-part2/part2-1/ && npm run build && @powershell Copy-Item dist -Recurse ../../fso-part4/Notes",
+    "deploy:full": "git add . && git commit -m uibuild && git push",
+    "start": "node indexExpress.js",
+    "dev": "nodemon indexExpress.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "node",
+    "node.js",
+    "js"
+  ],
+  "author": "Artem Matviienko",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "mongodb": "^6.4.0",
+    "mongoose": "^8.2.1"
+  },
+  "devDependencies": {
+    "@stylistic/eslint-plugin-js": "^1.7.0",
+    "eslint": "^8.57.0",
+    "nodemon": "^3.1.0"
+  }
+}
