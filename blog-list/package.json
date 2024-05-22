@@ -21,7 +21,8 @@
   "author": "Artem Matviienko <artemm3note@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "supertest": "^7.0.0"
   },
   "dependencies": {
     "cors": "^2.8.5",
