@@ -41,6 +41,12 @@ blogsRouter.put('/:id', async (request, response) => {
 })
 
 blogsRouter.delete('/:id', async (request, response) => {
+    const blog = await Blog.findById(request.params.id)
+
+    if (request.user.id !== blog.user.toString()) {
+        return response.status(400).json({ error: 'user id doesn\'t mathes id of blog owner' })
+    }
+
     await Blog.findByIdAndDelete(request.params.id)
     response.status(204).end()
 })
