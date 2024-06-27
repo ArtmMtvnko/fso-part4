@@ -1,3 +1,5 @@
+const User = require('../src/models/user')
+
 const initialBlogs = [
     {
         title: 'test 2 title',
@@ -20,6 +22,11 @@ const testBlog = {
     likes: 11,
 }
 
+const usersInDb = async () => {
+    const users = await User.find({})
+    return users.map(user => user.toJSON())
+}
+
 module.exports = {
-    initialBlogs, testBlog
+    initialBlogs, testBlog, usersInDb
 }
